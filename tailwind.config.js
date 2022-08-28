@@ -2,5 +2,11 @@ module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
-  plugins: [],
+  theme: {
+    extend: {
+      transitionProperty: {
+        page: "opacity , left",
+      }
+    }
+  }
 }
