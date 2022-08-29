@@ -1,24 +1,26 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import useFancyNavigationBar from "../modules/useFancyNavigationBar";
+import Navigation from "./Navigation";
 
 export default function Layout ({ children }) {
-  const [hide] = useFancyNavigationBar()
+  const [hideBar] = useFancyNavigationBar()
+
+  const navigationItems = [
+    { url: '/', label: 'Home' },
+    { url: '/about', label: 'About' },
+    { url: '/contact', label: 'Contact' },
+  ]
 
   return (
     <div className="min-h-screen">
-      <div className={[
-        "transition-transform duration-250 z-50 fixed top-0 flex justify-between w-full p-4 bg-black text-white",
-        `${hide ? 'translate-y-0' : '-translate-y-full'}`
-      ].join(' ')}>
-        <span>Job van den Hoonaard</span>
-        <div className="[&>*]:ml-2">
-          <Link to="/">home</Link>
-          <Link to="/about">about</Link>
-          <Link to="/contact">contact</Link>
-        </div>
+      <div
+        className={`transition-transform duration-250 z-50 fixed top-0 flex justify-between w-full bg-black 
+        opacity-80 text-white font-thin ${hideBar ? 'translate-y-0' : '-translate-y-full'}`}
+      >
+        <span className="whitespace-nowrap px-8 py-4">Job van den Hoonaard</span>
+        <Navigation items={navigationItems} />
       </div>
-      <div className="z-0">
+      <div className="z-0 w-screen overflow-hidden">
         {children}
       </div>
     </div>
