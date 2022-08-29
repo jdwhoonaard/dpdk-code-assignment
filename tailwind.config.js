@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       transitionProperty: {
-        page: "opacity , left",
+        page: "opacity , transform",
       }
     }
   }
