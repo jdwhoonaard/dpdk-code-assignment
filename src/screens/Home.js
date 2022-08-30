@@ -15,7 +15,7 @@ export default function Home () {
         <Link to="/about" className="hover:underline">More about me ></Link>
       </div>
       <Link
-        to="/about"
+        to="/recharge-my-party"
         className="h-[80vh] overflow-hidden bg-amber-100 text-black flex flex-col md:flex-row justify-center items-center md:gap-16 pt-16"
       >
         <img src={rechargeMyParty} className="rounded-lg w-auto h-[50vh] overflow-hidden" />
